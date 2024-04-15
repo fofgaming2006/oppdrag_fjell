@@ -13,8 +13,6 @@ if (isset($_POST['submit'])) {
     if ($password !== $confirmPassword) {
         $error = "Passordene matcher ikke.";
     } else {
-        // Hash passordet før lagring
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         // Sjekk om brukernavnet eller eposten allerede er registrert
         $checkQuery = "SELECT * FROM users WHERE username=? OR email=?";
